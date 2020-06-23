@@ -1,3 +1,4 @@
+import path from 'path'
 
 export default {
   mode: 'universal',
@@ -13,6 +14,7 @@ export default {
     ]
   },
   css: [
+    '~/assets/css/tailwind.css'
   ],
   plugins: [
   ],
@@ -24,5 +26,14 @@ export default {
   ],
   srcDir: 'src/',
   build: {
+    postcss: {
+      // Add plugin names as key and arguments as value
+      // Install them before as dependencies with npm or yarn
+      plugins: {
+        // Disable a plugin by passing false as value
+        tailwindcss: path.resolve(__dirname, './tailwind.config.js')
+      }
+    }
+
   }
 }
