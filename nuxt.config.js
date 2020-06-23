@@ -1,4 +1,5 @@
-import path from 'path'
+/* eslint-disable nuxt/no-cjs-in-config */
+const path = require('path')
 
 export default {
   mode: 'universal',
